@@ -9,20 +9,21 @@ function AddGroup() {
     input.readOnly = true;
     input.addEventListener('dblclick', () => {
       input.readOnly = false;
+      input.value = input.value.slice(0,-9);
     })
     input.addEventListener('blur', function() {
       input.readOnly = true;
-      input.value = input.value
+      input.value = input.value + '_20204634';
     });
   
     const deleteButton = document.createElement('button');
     const imgdelete = document.createElement('img');
-    imgdelete.src = "./delete.jpg";
+    imgdelete.src = "./img/delete.jpg";
     imgdelete.width = 13;
     deleteButton.id = 'deleteButton';
     deleteButton.appendChild(imgdelete);
     deleteButton.addEventListener('click', () => {
-        var result = window.confirm("Bạn có muốn xoá group "+ input.value + " ?");
+        var result = window.confirm("Trần Xuân Bách_20204634 có muốn xoá group "+ input.value + " ?");
         if(result)DeleteGroup(groupDiv)
       });
   
@@ -62,13 +63,20 @@ function AddGroup() {
     input1.type = 'text';
     input1.placeholder = 'Item Info Name';
     input1.style.border = 'none'
+    input1.readOnly = true;
+    input1.addEventListener('dblclick', () => {
+      input1.readOnly = false;
+    })
+    input1.addEventListener('blur', function() {
+      input1.readOnly = true;
+    });
   
     const input2 = document.createElement('input');
     input2.type = type;
 
     const deleteButton = document.createElement('button');
     const imgdelete = document.createElement('img');
-    imgdelete.src = "./delete.jpg";
+    imgdelete.src = "./img/delete.jpg";
     imgdelete.width = 13;
     deleteButton.appendChild(imgdelete);
   
@@ -78,7 +86,7 @@ function AddGroup() {
     group.appendChild(itemDiv);
 
     deleteButton.addEventListener('click', () => {
-        var result = window.confirm("Bạn có muốn xoá item "+ input1.value + " ?");
+        var result = window.confirm("Trần Xuân Bách_20204634 có muốn xoá item "+ input1.value + " ?");
         if(result)group.removeChild(itemDiv)
       });
 
